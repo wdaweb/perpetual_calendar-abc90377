@@ -7,8 +7,14 @@
 </head>
 <body>
     <?php
-    $month=11;//當月月份
-    $day=date('t',strtotime("2020-10"));//當月天數
+    //當月月份
+    if (!empty($_GET["month"])) {
+        $month=$_GET["month"];
+    }else {
+        $month=date('m',strtotime("now"));
+    };
+    echo $month;
+    $day=date('t',strtotime("2020-$month"));//當月天數
     $startW=date('w',strtotime("2020-$month-01"));//當月從星期幾開始
     echo "<table>";
     echo"<thead>";
@@ -39,6 +45,14 @@
     }
     echo "</table>";
     ?>
+    <?php
+    // if (condition) {
+    //     # code...
+    // }
+    // ?>
+    <a href="calender.php?month=<?=($month-1)?>">上個月</a>
+    <a href="calender.php?month=<?=($month+1)?>">下個月</a>
+    
     
 </body>
 </html>

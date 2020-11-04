@@ -9,12 +9,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="p-5">
 
     <?php
     //當月月份
     
-    if (isset($_GET["month"])) {//使用is_not_empty會造成month=0判為empty
+    if (isset($_GET["month"])&&  $_GET["month"]<=13 && $_GET["month"]>=0) {//使用is_not_empty會造成month=0判為empty
         
         if ($_GET["month"]==13) {
             
@@ -99,6 +99,29 @@
 
 
     <a href="calender.php">返回現在時間</a>
+    <br>
+    <form action="calender.php" method="GET" >
+    <div class="form-row">
+    <div class="form-group col-md-auto">
+      <label for="inputmonth">Month</label>
+      <select id="inputmonth" name="month" class="form-control">
+        <option selected> <?=$month?></option>
+        <?php
+        for ($i=1; $i <=12; $i++) { 
+            echo "<option>";
+            echo $i;
+            echo"</option>";
+        }
+        ?> 
+      </select>
+    </div>
+    <div class="form-group col-auto" >
+      <label for="year">Year</label>
+      <input type="text" class="form-control" name="year" id="year" value="<?=$year?>">
+    </div>
+     </div>
+     <button type="submit" class="btn btn-primary">Go!</button>
+    </form>
     
     
 </body>

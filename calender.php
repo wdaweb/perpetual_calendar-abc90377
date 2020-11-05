@@ -60,12 +60,15 @@ background: RGBA(252,248,248,.6);
     $day=date('t',strtotime("$year-$month"));//當月天數
     $startW=date('w',strtotime("$year-$month-01"));//當月從星期幾開始
     echo "<div class='d-flex flex-row w-100 ' style='height:350px;' >";//物件外框
-    echo "<div class='d-flex bg-dark col-3'>";
+    echo "<div class='d-flex bg- col-3'>";
     //圖案 對話框 回當日時間
-    echo 123;
+   
     echo "</div>";
     //下為表格圖片
-    echo "<div class='col-2 d-flex h-100 px-0 shadow' style='overflow:hidden'><img src="."'https://picsum.photos/500/600/?random=1'"."></div>";
+    echo "<div class='col-2 d-flex h-100 px-0 shadow' style='overflow:hidden'>";
+    echo "<img src='image/";
+    echo $month;
+    echo ".png'></div>";
     //下為表格
     echo "<div class='col-5 d-flex p-0 shadow-sm'><table class='table table-light h-100 table-bordered'style='text-align:center;'>";
     echo"<thead>";

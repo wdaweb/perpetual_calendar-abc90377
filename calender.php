@@ -44,14 +44,14 @@ a:hover {
     <?php
     //當月月份
     
-    if (isset($_GET["month"])&&  $_GET["month"]<=13 && $_GET["month"]>=0) {//使用is_not_empty會造成month=0判為empty
+    if (isset($_GET["month"])&&  $_GET["month"]<=12 && $_GET["month"]>=0) {//使用is_not_empty會造成month=0判為empty
         
-        if ($_GET["month"]==13) {
+        if ($_GET["month"]==1) {
             
             $month=1;
             
             
-        }elseif ($_GET["month"]==0) {
+        }elseif ($_GET["month"]==12) {
             
             $month=12;
             
@@ -84,9 +84,9 @@ a:hover {
         
         echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month-1)."&&year=".($year).'"'."><i class='fas fa-angle-left'></i></a></div>";
         echo "<div class=' d-flex col-2 justify-content-center align-items-center' style='font-size:42px;'>".date('F',strtotime("$year-$month"))."</div>";
-        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month+1)."&&year=".($year+1).'"'."><i class='fas fa-angle-right'></i></a></div>";
+        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month=1'."&&year=".($year+1).'"'."><i class='fas fa-angle-right'></i></a></div>";
     }elseif ($month==1) {
-        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month-1)."&&year=".($year-1).'"'."><i class='fas fa-angle-left'></i></a></div>";
+        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month=12'."&&year=".($year-1).'"'."><i class='fas fa-angle-left'></i></a></div>";
         echo "<div class=' d-flex col-2 justify-content-center align-items-center' style='font-size:42px;'>".date('F',strtotime("$year-$month"))."</div>";
         echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month+1)."&&year=".($year).'"'."><i class='fas fa-angle-right'></i></a></div>";
     }else {

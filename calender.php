@@ -150,7 +150,7 @@ a:hover {
                 echo "</td>";
             }
             else {
-                if (($i*7+$j)-($startW-1)== date('j')) {
+                if ((($i*7+$j)-($startW-1)== date('j'))&& $year==date('Y') && $month==date('m')) {
                     echo "<td class='today'>";
                     echo ($i*7+$j)-($startW-1);
                     echo "</td>";

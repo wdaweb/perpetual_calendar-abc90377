@@ -77,22 +77,22 @@ a:hover {
    
     
     echo "<div class='container'>";
-    echo "<div class='d-flex flex-wrap m-5 h' >";
+    echo "<div class='d-lg-flex flex-wrap m-5 h' >";
     echo "<div class='text-center d-flex col-12 justify-content-center'>".$year."</div>";
     echo '<br>';
     if ($month==12) {
         
-        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month-1)."&&year=".($year).'"'."><i class='fas fa-angle-left'></i></a></div>";
-        echo "<div class=' d-flex col-2 justify-content-center align-items-center' style='font-size:42px;'>".date('F',strtotime("$year-$month"))."</div>";
-        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month=1'."&&year=".($year+1).'"'."><i class='fas fa-angle-right'></i></a></div>";
+        echo '<div class=" d-lg-flex d-none col-lg-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month-1)."&&year=".($year).'"'."><i class='fas fa-angle-left'></i></a></div>";
+        echo "<div class=' d-flex col-lg-2  justify-content-center align-items-center' style='font-size:42px;'>".date('F',strtotime("$year-$month"))."</div>";
+        echo '<div class=" d-lg-flex  d-none col-lg-5  justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month=1'."&&year=".($year+1).'"'."><i class='fas fa-angle-right'></i></a></div>";
     }elseif ($month==1) {
-        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month=12'."&&year=".($year-1).'"'."><i class='fas fa-angle-left'></i></a></div>";
-        echo "<div class=' d-flex col-2 justify-content-center align-items-center' style='font-size:42px;'>".date('F',strtotime("$year-$month"))."</div>";
-        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month+1)."&&year=".($year).'"'."><i class='fas fa-angle-right'></i></a></div>";
+        echo '<div class=" d-lg-flex  d-none col-lg-5  justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month=12'."&&year=".($year-1).'"'."><i class='fas fa-angle-left'></i></a></div>";
+        echo "<div class=' d-flex col-lg-2  justify-content-center align-items-center' style='font-size:42px;'>".date('F',strtotime("$year-$month"))."</div>";
+        echo '<div class=" d-lg-flex  d-none col-lg-5  justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month+1)."&&year=".($year).'"'."><i class='fas fa-angle-right'></i></a></div>";
     }else {
-        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month-1)."&&year=".($year).'"'."><i class='fas fa-angle-left'></i></a></div>";
-        echo "<div class=' d-flex col-2 justify-content-center align-items-center' style='font-size:42px;'>".date('F',strtotime("$year-$month"))."</div>";
-        echo '<div class=" d-flex col-5 justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month+1)."&&year=".($year).'"'."><i class='fas fa-angle-right'></i></a></div>";
+        echo '<div class=" d-lg-flex  d-none col-lg-5  justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month-1)."&&year=".($year).'"'."><i class='fas fa-angle-left'></i></a></div>";
+        echo "<div class=' d-flex col-lg-2  justify-content-center align-items-center' style='font-size:42px;'>".date('F',strtotime("$year-$month"))."</div>";
+        echo '<div class=" d-lg-flex  d-none col-lg-5  justify-content-center align-items-center" style="font-size:30px;"><a href="calender.php?month='.($month+1)."&&year=".($year).'"'."><i class='fas fa-angle-right'></i></a></div>";
         
     }
     
@@ -104,7 +104,7 @@ a:hover {
     $day=date('t',strtotime("$year-$month"));//當月天數
     $startW=date('w',strtotime("$year-$month-01"));//當月從星期幾開始
     echo "<div class='d-flex flex-row w-100 ' style='height:350px;' >";//物件外框
-    echo "<div class='d-flex  flex-column  col-2'>";
+    echo "<div class='d-lg-flex  flex-column  col-lg-2 d-none'>";
     //圖案 對話框 回當日時間
     echo '<a href="calender.php"><div class="position-relative"><img src="image/textbox1.png"></div>';
     echo '<div ><img src="image/ghosticon1.png"></div>';
@@ -121,12 +121,12 @@ a:hover {
 
     echo "</div></a>";
     //下為表格圖片
-    echo "<div class='col-2 d-flex h-100 px-0 shadow' style='overflow:hidden'>";
+    echo "<div class='col-lg-2 col-12 d-lg-flex d-none h-100 px-0 shadow' style='overflow:hidden'>";
     echo "<img src='image/";
     echo $month;
     echo ".png'></div>";
     //下為表格
-    echo "<div class='col-6 d-flex p-0 shadow-sm'><table class='table table-light h-100 table-bordered'style='text-align:center;'>";
+    echo "<div class='col-lg-6 col-12 d-flex p-0 shadow-sm text-center'><table class='table table-light h-100 table-bordered'style='text-align:center;'>";
     echo"<thead>";
     echo"<tr>
     
@@ -168,7 +168,7 @@ a:hover {
     
 
     echo "</table></div>";
-    echo "<div class='d-flex col-2 align-items-center '>";//選擇要去的年月 -->
+    echo "<div class='d-lg-flex d-none col-lg-2 align-items-center '>";//選擇要去的年月 -->
     ?>
    
     <form action="calender.php" method="GET" >
@@ -186,7 +186,7 @@ a:hover {
         ?> 
       </select>
     </div>
-    <div class="form-group col-md-12" >
+    <div class="form-group col-12" >
       <label for="year">Year</label>
       <input type="text" class="form-control" name="year" id="year" value="<?=$year?>">
     </div>
